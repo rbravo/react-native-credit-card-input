@@ -89,14 +89,14 @@ _onChange => form => console.log(form);
 
 | Property | Type | Description |
 | --- | --- | --- | --- |
-|autoFocus | PropTypes.bool | Automatically focus Card Number field on render|
-|onChange | PropTypes.func | Receives a `formData` object every time the form changes |
-|onFocus | PropTypes.func | Receives the name of currently focused field |
-|placeholders | PropTypes.object | Defaults to <br/>`{ number: "1234 5678 1234 5678", expiry: "MM/YY", cvc: "CVC" }` |
-|inputStyle | Text.propTypes.style | Style for credit-card form's textInput |
-|validColor | PropTypes.string | Color that will be applied for valid text input. Defaults to: "{inputStyle.color}" |
-|invalidColor | PropTypes.string | Color that will be applied for invalid text input. Defaults to: "red" |
-|placeholderColor | PropTypes.string | Color that will be applied for text input placeholder. Defaults to: "gray" |
+| autoFocus | PropTypes.bool | Automatically focus Card Number field on render|
+| onChange | PropTypes.func | Receives a `formData` object every time the form changes |
+| onFocus | PropTypes.func | Receives the name of currently focused field |
+| placeholders | PropTypes.object | Defaults to <br/>`{ number: "1234 5678 1234 5678", expiry: "MM/YY", cvc: "CVC" }` |
+| inputStyle | Text.propTypes.style | Style for credit-card form's textInput |
+| validColor | PropTypes.string | Color that will be applied for valid text input. Defaults to: "{inputStyle.color}" |
+| invalidColor | PropTypes.string | Color that will be applied for invalid text input. Defaults to: "red" |
+| placeholderColor | PropTypes.string | Color that will be applied for text input placeholder. Defaults to: "gray" |
 
 #### NOTES
 
@@ -107,26 +107,26 @@ LiteCreditCardInput does not support `requiresName`, `requiresCVC`, and `require
 
 | Property | Type | Description |
 | --- | --- | --- | --- |
-|autoFocus | PropTypes.bool | Automatically focus Card Number field on render|
-|onChange | PropTypes.func | Receives a `formData` object every time the form changes |
-|onFocus | PropTypes.func | Receives the name of currently focused field |
-|labels | PropTypes.object | Defaults to <br/>`{ number: "CARD NUMBER", expiry: "EXPIRY", cvc: "CVC/CCV" }` |
-|placeholders | PropTypes.object | Defaults to <br/>`{ number: "1234 5678 1234 5678", expiry: "MM/YY", cvc: "CVC" }` |
-|cardScale | PropTypes.number | Scales the credit-card view.<br/>Defaults to `1`, which translates to `{ width: 300, height: 190 }` |
-|cardFontFamily | PropTypes.string | Font family for the CreditCardView, works best with monospace fonts. Defaults to Courier (iOS) or monospace (android) |
-|cardImageFront | PropTypes.number | Image for the credit-card view `e.g. require("./card.png")` |
-|cardImageFront | PropTypes.number | Image for the credit-card view `e.g. require("./card.png")` |
-|labelStyle | Text.propTypes.style | Style for credit-card form's labels |
-|inputStyle | Text.propTypes.style | Style for credit-card form's textInput |
-|inputContainerStyle | View.propTypes.style | Style for textInput's container<br/> Defaults to: `{ borderBottomWidth: 1, borderBottomColor: "black" }` |
-|validColor | PropTypes.string | Color that will be applied for valid text input. Defaults to: "{inputStyle.color}" |
-|invalidColor | PropTypes.string | Color that will be applied for invalid text input. Defaults to: "red" |
-|placeholderColor | PropTypes.string | Color that will be applied for text input placeholder. Defaults to: "gray" |
-|requiresName | PropTypes.bool | Shows cardholder's name field<br/> Default to `false` |
-|requiresCVC | PropTypes.bool | Shows CVC field<br/> Default to `true` |
-|requiresPostalCode | PropTypes.bool | Shows postalCode field<br/> Default to `false` |
-|validatePostalCode | PropTypes.func | Function to validate postalCode, expects `incomplete`, `valid`, or `invalid` as return values|
-|cardViewProps | PropTypes.object | Pass `props` object to inner CardView component `e.g. cardViewProps={{placeholder: {name: 'NOME NO CARTÃO', monthYear: 'MÊS/ANO'}}}` |
+| autoFocus | PropTypes.bool | Automatically focus Card Number field on render|
+| onChange | PropTypes.func | Receives a `formData` object every time the form changes |
+| onFocus | PropTypes.func | Receives the name of currently focused field |
+| labels | PropTypes.object | Defaults to <br/>`{ number: "CARD NUMBER", expiry: "EXPIRY", cvc: "CVC/CCV" }` |
+| placeholders | PropTypes.object | Defaults to <br/>`{ number: "1234 5678 1234 5678", expiry: "MM/YY", cvc: "CVC" }` |
+| cardScale | PropTypes.number | Scales the credit-card view.<br/>Defaults to `1`, which translates to `{ width: 300, height: 190 }` |
+| cardFontFamily | PropTypes.string | Font family for the CreditCardView, works best with monospace fonts. Defaults to Courier (iOS) or monospace (android) |
+| cardImageFront | PropTypes.number | Image for the credit-card view `e.g. require("./card.png")` |
+| cardImageFront | PropTypes.number | Image for the credit-card view `e.g. require("./card.png")` |
+| labelStyle | Text.propTypes.style | Style for credit-card form's labels |
+| inputStyle | Text.propTypes.style | Style for credit-card form's textInput |
+| inputContainerStyle | View.propTypes.style | Style for textInput's container<br/> Defaults to: `{ borderBottomWidth: 1, borderBottomColor: "black" }` |
+| validColor | PropTypes.string | Color that will be applied for valid text input. Defaults to: "{inputStyle.color}" |
+| invalidColor | PropTypes.string | Color that will be applied for invalid text input. Defaults to: "red" |
+| placeholderColor | PropTypes.string | Color that will be applied for text input placeholder. Defaults to: "gray" |
+| requiresName | PropTypes.bool | Shows cardholder's name field<br/> Default to `false` |
+| requiresCVC | PropTypes.bool | Shows CVC field<br/> Default to `true` |
+| requiresPostalCode | PropTypes.bool | Shows postalCode field<br/> Default to `false` |
+| validatePostalCode | PropTypes.func | Function to validate postalCode, expects `incomplete`, `valid`, or `invalid` as return values|
+| cardViewProps | PropTypes.object | Pass `props` object to inner CardView component `e.g. cardViewProps={{placeholder: {name: 'NOME NO CARTÃO', monthYear: 'MÊS/ANO'}}}` |
 
 # Methods
 
