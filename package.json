@@ -1,16 +1,81 @@
 {
-  "name": "react-native-credit-card-input",
-  "version": "0.3.3",
+  "_args": [
+    [
+      {
+        "raw": "react-native-credit-card-input-fullpage",
+        "scope": null,
+        "escapedName": "react-native-credit-card-input-fullpage",
+        "name": "react-native-credit-card-input-fullpage",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Dev\\cyberbar\\appqbaarcliente"
+    ]
+  ],
+  "_from": "react-native-credit-card-input-fullpage@latest",
+  "_id": "react-native-credit-card-input-fullpage@0.1.0",
+  "_inCache": true,
+  "_location": "/react-native-credit-card-input-fullpage",
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/react-native-credit-card-input-fullpage-0.1.0.tgz_1481802384133_0.7109552866313607"
+  },
+  "_npmUser": {
+    "name": "lexor90",
+    "email": "agosto.alessandro@gmail.com"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-credit-card-input-fullpage",
+    "scope": null,
+    "escapedName": "react-native-credit-card-input-fullpage",
+    "name": "react-native-credit-card-input-fullpage",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-credit-card-input-fullpage/-/react-native-credit-card-input-fullpage-0.1.0.tgz",
+  "_shasum": "4d4d639be735e1beb482d25d4695aeefed090537",
+  "_shrinkwrap": null,
+  "_spec": "react-native-credit-card-input-fullpage",
+  "_where": "C:\\Dev\\cyberbar\\appqbaarcliente",
+  "author": {
+    "name": "sbycrosz"
+  },
+  "bugs": {
+    "url": "https://github.com/sbycrosz/react-native-credit-card-input/issues"
+  },
+  "dependencies": {
+    "card-validator": "^2.2.0",
+    "lodash.compact": "^3.0.1",
+    "lodash.every": "^4.6.0",
+    "lodash.pick": "^4.4.0",
+    "lodash.values": "^4.3.0",
+    "react-native-flip-card": "^3.3.0"
+  },
   "description": "React native credit card input component",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js ."
+  "devDependencies": {
+    "babel-eslint": "^5.0.0",
+    "babel-polyfill": "^6.6.1",
+    "babel-preset-react-native": "^1.8.0",
+    "eslint": "~2.2.0",
+    "eslint-config-airbnb": "6.0.2",
+    "eslint-plugin-react": "^4.2.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sbycrosz/react-native-credit-card-input.git"
+  "directories": {},
+  "dist": {
+    "shasum": "4d4d639be735e1beb482d25d4695aeefed090537",
+    "tarball": "https://registry.npmjs.org/react-native-credit-card-input-fullpage/-/react-native-credit-card-input-fullpage-0.1.0.tgz"
   },
+  "gitHead": "9188f66869022c50320fbc87a5e1b79d449ede38",
+  "homepage": "https://github.com/sbycrosz/react-native-credit-card-input#readme",
   "keywords": [
     "react-native",
     "ios",
@@ -26,26 +91,24 @@
     "react-component",
     "react-native-component"
   ],
-  "author": "sbycrosz",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sbycrosz/react-native-credit-card-input/issues"
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "lexor90",
+      "email": "agosto.alessandro@gmail.com"
+    }
+  ],
+  "name": "react-native-credit-card-input-fullpage",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbycrosz/react-native-credit-card-input.git"
   },
-  "homepage": "https://github.com/sbycrosz/react-native-credit-card-input#readme",
-  "dependencies": {
-    "card-validator": "^3.0.0",
-    "react-native-flip-card": "^3.3.0",
-    "lodash.compact": "^3.0.1",
-    "lodash.every": "^4.6.0",
-    "lodash.pick": "^4.4.0",
-    "lodash.values": "^4.3.0"
+  "scripts": {
+    "lint": "eslint --ext .js .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "babel-eslint": "^5.0.0",
-    "babel-polyfill": "^6.6.1",
-    "babel-preset-react-native": "^1.8.0",
-    "eslint": "~2.2.0",
-    "eslint-config-airbnb": "6.0.2",
-    "eslint-plugin-react": "^4.2.0"
-  }
+  "version": "0.1.0"
 }

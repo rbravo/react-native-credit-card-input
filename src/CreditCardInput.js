@@ -6,7 +6,6 @@ import ReactNative, {
   StyleSheet,
   ScrollView,
   Dimensions,
-  TextInput,
 } from "react-native";
 
 import CreditCard from "./CardView";
@@ -21,20 +20,25 @@ const s = StyleSheet.create({
     marginTop: 20,
   },
   inputContainer: {
-    marginLeft: 20,
   },
   inputLabel: {
-    fontWeight: "bold",
+    fontSize: 34/2,
+    paddingLeft: 10,
+    paddingRight: 10,
+    justifyContent: 'center',
+    lineHeight: 40
   },
   input: {
     height: 40,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
 });
 
 const CVC_INPUT_WIDTH = 70;
 const EXPIRY_INPUT_WIDTH = CVC_INPUT_WIDTH;
 const CARD_NUMBER_INPUT_WIDTH_OFFSET = 40;
-const CARD_NUMBER_INPUT_WIDTH = Dimensions.get("window").width - EXPIRY_INPUT_WIDTH - CARD_NUMBER_INPUT_WIDTH_OFFSET;
+const CARD_NUMBER_INPUT_WIDTH = Dimensions.get("window").width;
 const NAME_INPUT_WIDTH = CARD_NUMBER_INPUT_WIDTH;
 const PREVIOUS_FIELD_OFFSET = 40;
 const POSTAL_CODE_INPUT_WIDTH = 120;
@@ -58,38 +62,6 @@ export default class CreditCardInput extends Component {
     cardImageBack: PropTypes.number,
     cardScale: PropTypes.number,
     cardFontFamily: PropTypes.string,
-    cardBrandIcons: PropTypes.object,
-
-    allowScroll: PropTypes.bool,
-
-    additionalInputsProps: PropTypes.objectOf(PropTypes.shape(TextInput.propTypes)),
-  };
-
-  static defaultProps = {
-    cardViewSize: {},
-    labels: {
-      name: "CARDHOLDER'S NAME",
-      number: "CARD NUMBER",
-      expiry: "EXPIRY",
-      cvc: "CVC/CCV",
-      postalCode: "POSTAL CODE",
-    },
-    placeholders: {
-      name: "Full Name",
-      number: "1234 5678 1234 5678",
-      expiry: "MM/YY",
-      cvc: "CVC",
-      postalCode: "34567",
-    },
-    inputContainerStyle: {
-      borderBottomWidth: 1,
-      borderBottomColor: "black",
-    },
-    validColor: "",
-    invalidColor: "red",
-    placeholderColor: "gray",
-    allowScroll: false,
-    additionalInputsProps: {},
   };
 
   componentDidMount = () => this._focus(this.props.focused);
@@ -117,7 +89,6 @@ export default class CreditCardInput extends Component {
       inputStyle, labelStyle, validColor, invalidColor, placeholderColor,
       placeholders, labels, values, status,
       onFocus, onChange, onBecomeEmpty, onBecomeValid,
-      additionalInputsProps,
     } = this.props;
 
     return {
@@ -132,8 +103,6 @@ export default class CreditCardInput extends Component {
       status: status[field],
 
       onFocus, onChange, onBecomeEmpty, onBecomeValid,
-
-      additionalInputProps: additionalInputsProps[field],
     };
   };
 
@@ -141,8 +110,8 @@ export default class CreditCardInput extends Component {
     const {
       cardImageFront, cardImageBack, inputContainerStyle,
       values: { number, expiry, cvc, name, type }, focused,
-      allowScroll, requiresName, requiresCVC, requiresPostalCode,
-      cardScale, cardFontFamily, cardBrandIcons,
+      requiresName, requiresCVC, requiresPostalCode,
+      cardScale, cardFontFamily, placeholders, cardViewProps
     } = this.props;
 
     return (
@@ -153,33 +122,57 @@ export default class CreditCardInput extends Component {
             fontFamily={cardFontFamily}
             imageFront={cardImageFront}
             imageBack={cardImageBack}
-            customIcons={cardBrandIcons}
             name={requiresName ? name : " "}
             number={number}
             expiry={expiry}
-            cvc={cvc} />
+            cvc={cvc} 
+            placeholder={cardViewProps.placeholder}
+            />
         <ScrollView ref="Form"
-            horizontal
-            keyboardShouldPersistTaps="always"
-            scrollEnabled={allowScroll}
+            horizontal={false}
+            keyboardShouldPersistTap="always"
+            scrollEnabled={false}
             showsHorizontalScrollIndicator={false}
             style={s.form}>
           <CCInput {...this._inputProps("number")}
-              containerStyle={[s.inputContainer, inputContainerStyle, { width: CARD_NUMBER_INPUT_WIDTH }]} />
+              containerStyle={[s.inputContainer, inputContainerStyle, { flex: 1, flexDirection: 'row', justifyContent: 'space-between', borderTopWidth: 1, borderBottomWidth: 1,borderColor: '#e3e3e3', width: CARD_NUMBER_INPUT_WIDTH }]} />
           <CCInput {...this._inputProps("expiry")}
-              containerStyle={[s.inputContainer, inputContainerStyle, { width: EXPIRY_INPUT_WIDTH }]} />
+              containerStyle={[s.inputContainer, inputContainerStyle,{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: '#e3e3e3', width: CARD_NUMBER_INPUT_WIDTH }]} />
           { requiresCVC &&
             <CCInput {...this._inputProps("cvc")}
-                containerStyle={[s.inputContainer, inputContainerStyle, { width: CVC_INPUT_WIDTH }]} /> }
+                containerStyle={[s.inputContainer, inputContainerStyle,{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1,borderColor: '#e3e3e3', width: CARD_NUMBER_INPUT_WIDTH }]} /> }
           { requiresName &&
             <CCInput {...this._inputProps("name")}
                 keyboardType="default"
-                containerStyle={[s.inputContainer, inputContainerStyle, { width: NAME_INPUT_WIDTH }]} /> }
+                containerStyle={[s.inputContainer, inputContainerStyle,{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1,borderColor: '#e3e3e3', width: CARD_NUMBER_INPUT_WIDTH }]} /> }
           { requiresPostalCode &&
             <CCInput {...this._inputProps("postalCode")}
-                containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
+                containerStyle={[s.inputContainer, inputContainerStyle, { flex: 1, flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1,borderColor: '#e3e3e3', width: CARD_NUMBER_INPUT_WIDTH }]} /> }
         </ScrollView>
       </View>
     );
   }
 }
+
+CreditCardInput.defaultProps = {
+  cardViewSize: {},
+  labels: {
+    name: "Cardholder's name",
+    number: "Card Number",
+    expiry: "Expiry",
+    cvc: "CVC",
+    postalCode: "Postal Code",
+  },
+  placeholders: {
+    name: "Full Name",
+    number: "1234 5678 1234 5678",
+    expiry: "MM/YY",
+    cvc: "CVC",
+    postalCode: "34567",
+  },
+  inputContainerStyle: {
+  },
+  validColor: "",
+  invalidColor: "red",
+  placeholderColor: "gray",
+};

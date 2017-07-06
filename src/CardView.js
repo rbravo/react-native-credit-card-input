@@ -7,7 +7,7 @@ import {
   Platform,
 } from "react-native";
 
-import defaultIcons from "./Icons";
+import Icons from "./Icons";
 import FlipCard from "react-native-flip-card";
 
 const BASE_SIZE = { width: 300, height: 190 };
@@ -89,7 +89,6 @@ export default class CardView extends Component {
     fontFamily: PropTypes.string,
     imageFront: PropTypes.number,
     imageBack: PropTypes.number,
-    customIcons: PropTypes.object,
   };
 
   static defaultProps = {
@@ -109,10 +108,10 @@ export default class CardView extends Component {
 
   render() {
     const { focused,
-      brand, name, number, expiry, cvc, customIcons,
-      placeholder, imageFront, imageBack, scale, fontFamily } = this.props;
+      brand, name, number, expiry, cvc,
+      placeholder: ph, imageFront, imageBack, scale, fontFamily } = this.props;
 
-    const Icons = { ...defaultIcons, ...customIcons };
+    const placeholder = {...(CardView.defaultProps.placeholder),...ph};
     const isAmex = brand === "american-express";
     const shouldFlip = !isAmex && focused === "cvc";
 
@@ -134,7 +133,7 @@ export default class CardView extends Component {
           <Image style={[BASE_SIZE, s.cardFace, transform]}
               source={imageFront}>
               <Image style={[s.icon]}
-                  source={Icons[brand]} />
+                  source={{ uri: Icons[brand] }} />
               <Text style={[s.baseText, { fontFamily }, s.number, !number && s.placeholder, focused === "number" && s.focused]}>
                 { !number ? placeholder.number : number }
               </Text>
@@ -143,7 +142,7 @@ export default class CardView extends Component {
                 { !name ? placeholder.name : name.toUpperCase() }
               </Text>
               <Text style={[s.baseText, { fontFamily }, s.expiryLabel, s.placeholder, focused === "expiry" && s.focused]}>
-                MONTH/YEAR
+                { placeholder.monthYear ? placeholder.monthYear : 'MONTH/YEAR' }
               </Text>
               <Text style={[s.baseText, { fontFamily }, s.expiry, !expiry && s.placeholder, focused === "expiry" && s.focused]}>
                 { !expiry ? placeholder.expiry : expiry }
