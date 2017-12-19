@@ -2,6 +2,7 @@ import valid from "card-validator";
 import pick from "lodash.pick";
 import values from "lodash.values";
 import every from "lodash.every";
+import PropTypes from 'prop-types'
 
 const toStatus = validation => {
   return validation.isValid ? "valid" :
