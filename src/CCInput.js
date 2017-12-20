@@ -6,7 +6,10 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  ViewPropTypes as RNViewPropTypes,  
 } from "react-native";
+const ViewPropTypes = RNViewPropTypes || View.propTypes;
+
 
 const s = StyleSheet.create({
   baseInputStyle: {
@@ -26,7 +29,7 @@ export default class CCInput extends Component {
 
     status: PropTypes.oneOf(["valid", "invalid", "incomplete"]),
 
-    containerStyle: View.propTypes.style,
+    containerStyle: ViewPropTypes.style,
     inputStyle: Text.propTypes.style,
     labelStyle: Text.propTypes.style,
     validColor: PropTypes.string,
