@@ -1,14 +1,12 @@
 'use strict'
 
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 import {
   View,
   TouchableOpacity,
   Animated,
   Platform,
-  ViewPropTypes
 } from "react-native";
 
 import S from './Style.js'

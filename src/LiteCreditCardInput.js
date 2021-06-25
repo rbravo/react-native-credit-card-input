@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types'
 import {
   View,
   Text,
@@ -67,18 +66,7 @@ const s = StyleSheet.create({
 
 /* eslint react/prop-types: 0 */ // https://github.com/yannickcr/eslint-plugin-react/issues/106
 export default class LiteCreditCardInput extends Component {
-  static propTypes = {
-    ...InjectedProps,
-
-    placeholders: PropTypes.object,
-
-    inputStyle: Text.propTypes.style,
-
-    validColor: PropTypes.string,
-    invalidColor: PropTypes.string,
-    placeholderColor: PropTypes.string,
-  };
-
+ 
   componentDidMount = () => this._focus(this.props.focused);
 
   componentWillReceiveProps = newProps => {

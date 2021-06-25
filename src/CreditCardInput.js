@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types'
 import ReactNative, {
   NativeModules,
   View,
@@ -7,9 +6,7 @@ import ReactNative, {
   StyleSheet,
   ScrollView,
   Dimensions,
-  ViewPropTypes as RNViewPropTypes,  
 } from "react-native";
-const ViewPropTypes = RNViewPropTypes || View.propTypes;
 
 import CreditCard from "./CardView";
 import CCInput from "./CCInput";
@@ -48,24 +45,6 @@ const POSTAL_CODE_INPUT_WIDTH = 120;
 
 /* eslint react/prop-types: 0 */ // https://github.com/yannickcr/eslint-plugin-react/issues/106
 export default class CreditCardInput extends Component {
-  static propTypes = {
-    ...InjectedProps,
-    labels: PropTypes.object,
-    placeholders: PropTypes.object,
-
-    labelStyle: Text.propTypes.style,
-    inputStyle: Text.propTypes.style,
-    inputContainerStyle: ViewPropTypes.style,
-
-    validColor: PropTypes.string,
-    invalidColor: PropTypes.string,
-    placeholderColor: PropTypes.string,
-
-    cardImageFront: PropTypes.number,
-    cardImageBack: PropTypes.number,
-    cardScale: PropTypes.number,
-    cardFontFamily: PropTypes.string,
-  };
 
   componentDidMount = () => this._focus(this.props.focused);
 

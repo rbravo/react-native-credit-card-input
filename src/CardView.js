@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types'
 import {
   View,
   Image,
@@ -77,22 +76,7 @@ const s = StyleSheet.create({
 
 /* eslint react/prop-types: 0 */ // https://github.com/yannickcr/eslint-plugin-react/issues/106
 export default class CardView extends Component {
-  static propTypes = {
-    focused: PropTypes.string,
-
-    brand: PropTypes.string,
-    name: PropTypes.string,
-    number: PropTypes.string,
-    expiry: PropTypes.string,
-    cvc: PropTypes.string,
-    placeholder: PropTypes.object,
-
-    scale: PropTypes.number,
-    fontFamily: PropTypes.string,
-    imageFront: PropTypes.number,
-    imageBack: PropTypes.number,
-  };
-
+  
   static defaultProps = {
     name: "",
     placeholder: {
