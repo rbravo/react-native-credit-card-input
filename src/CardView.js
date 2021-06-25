@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 import Icons from "./Icons";
-import FlipCard from "react-native-flip-card";
+import FlipCard from "./react-native-flipcard";
 
 const BASE_SIZE = { width: 300, height: 190 };
 
